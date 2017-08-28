@@ -3,12 +3,14 @@ public class libro
     private String Titulo = "";
     private String Autor = "";
     private int Paginas;
+    private int Prestamos;
     private String numeroDeReferencia = "";
     public libro(String titulo, String autor, int paginas)
     {
         Titulo = titulo;
         Autor = autor;
         Paginas = paginas;
+        Prestamos = 0;
     }
     
     public String dimeAutor()
@@ -42,14 +44,27 @@ public class libro
             Detalles += "Numero de Referencia: ";
             Detalles += numeroDeReferencia;
         }
+        Detalles += "Prestamos: ";
+        Detalles += Prestamos;
         return Detalles;
     }
     public void cambiaNumRef(String numRef)
     {
-                numeroDeReferencia = numRef;
+        if(numRef.length() == 3)
+        {
+             numeroDeReferencia = numRef;
+        }
     }
     public String dimeNumRef()
     {
         return numeroDeReferencia;
+    }
+    public void presta()
+    {
+        Prestamos += 1;
+    }
+    public int dimePrestamos()
+    {
+        return Prestamos;
     }
 }
