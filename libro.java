@@ -3,6 +3,7 @@ public class libro
     private String Titulo = "";
     private String Autor = "";
     private int Paginas;
+    private String numeroDeReferencia = "";
     public libro(String titulo, String autor, int paginas)
     {
         Titulo = titulo;
@@ -35,6 +36,20 @@ public class libro
         Detalles += " ";
         Detalles += "Paginas: ";
         Detalles += Paginas;
+        if(numeroDeReferencia.length()>0)
+        {
+            Detalles += " ";
+            Detalles += "Numero de Referencia: ";
+            Detalles += numeroDeReferencia;
+        }
         return Detalles;
+    }
+    public void cambiaNumRef(String numRef)
+    {
+                numeroDeReferencia = numRef;
+    }
+    public String dimeNumRef()
+    {
+        return numeroDeReferencia;
     }
 }
